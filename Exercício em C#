@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Projeto2
+{}
+    internal class Programl
+    {
+        static void Main(string[] args)
+        {
+        Console.WriteLine("Diga a sua idade: ");
+        int idade = int.Parse (Console.ReadLine());
+
+        if (idade >= 0 && idade <=12)
+        {
+            Console.WriteLine("É uma criança");
+        }
+        else if (idade >= 15 && idade <=20)
+        {
+            Console.WriteLine("Você é um Jovem");
+        }
+        else if (idade >= 20 && idade <=60)
+        {
+            Console.WriteLine("Você é um Adulto");
+        }
+        else if(idade >= 60)
+        {
+            Console.WriteLine("Você é um idoso");
+        }
+
+        Console.WriteLine("Aperte Enter para encerrar");
+ 
+
+        Console.ReadLine();
+        }
+        
+    }
+
+git commit -m "Adicionando um exercício em C#"
