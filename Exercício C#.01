@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Programação.CS
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+
+        {
+            Produto_taxa();//Chamando a função.
+        }
+
+        //Receber o valor de um produto e mostrar o produtro com o valor da taxa.
+        static void Produto_taxa()
+        {
+            Console.WriteLine("Digite o valor do produto");
+            float Produto = float.Parse(Console.ReadLine());//Recebe o valor. 
+ 
+            int Taxa = 5; //Valor da taxa.
+ 
+            float Produto_Taxado = (Produto / Taxa);//Pegando 5% do valor do produto.
+ 
+            float Produto_Final = (Produto + Produto_Taxado);//Soma os 5% com o valor original.
+
+
+            Console.Write("Este é o valor do com produto com a taxa de 5%: ");
+            Console.Write(Produto_Final); //Mostra o Valor final do produto.
+
+            Console.ReadLine();
+            
+
+        }
+    }
+}
