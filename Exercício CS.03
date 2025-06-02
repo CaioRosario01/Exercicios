@@ -1,0 +1,118 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //Programa pra treinar:
+            // - Estrutura de repetição
+            // - Estrutura de condicional
+            // - Declaração de variáveis
+            // - Operações matemáticas
+
+        
+            {
+                //Processo de verificação
+
+
+
+                float carregando = 0;
+                int delay = 300;
+                string Nome = "Caio".ToLower();
+                int Idade = 15;
+                string Escola = "CPM".ToLower();
+
+
+                Console.WriteLine("Digite o Nome, idade e escola do aluno");
+                Console.Write("Digite o Nome: ");
+                string nome = Console.ReadLine().ToLower();
+                Console.Write("Digite a idade: ");
+                int idade = int.Parse(Console.ReadLine());
+                Console.Write("Digite a escola do aluno: ");
+                string escola = Console.ReadLine().ToLower();
+
+                Console.WriteLine("Caso algum dos requisitos estiver errado, o programa será encerrado.");
+
+                //Estrutura de Loop
+                while (carregando < 102)
+                {
+                    Console.WriteLine($"{carregando}%");
+                    Thread.Sleep(delay);
+                    carregando += 4;
+                }
+
+                //Estrutura de Condicional
+                if (nome == Nome)
+                {
+                    Console.WriteLine("Nome correto");
+                }
+
+                else
+                {
+                    Console.WriteLine("A verificação falhou, nome errado");
+                    return;
+                }
+
+                if (idade == Idade)
+                {
+                    Console.WriteLine("Idade correta");
+                }
+
+                else
+                {
+                    Console.WriteLine("Idade errada");
+                    return; // Interrompe o processo
+                }
+
+                if (escola == Escola)
+                {
+                    Console.WriteLine("Escola correta");
+                }
+
+                else
+                {
+                    Console.WriteLine("O nome da escola está errado");
+                    return; //Interrompe o processo
+                }
+
+
+                //Recebendo a primeira nota
+                Console.WriteLine("Digite a primeira nota: ");
+                float nota1 = float.Parse(Console.ReadLine());
+
+                //Segunda nota
+                Console.WriteLine("Digite a segunda nota: ");
+                float nota2 = float.Parse(Console.ReadLine());
+
+                //Tratando as notas
+                float média = (nota1 + nota2) / 2;
+                Console.WriteLine($"A média do aluno foi: {média:F2}");
+
+                if (média <= 6.0)
+                {
+                    Console.WriteLine("O aluno está reprovado");
+                }
+
+                else if (média >= 6.0)
+                {
+                    Console.WriteLine("O aluno foi aprovado");
+                }
+
+
+                Console.ReadLine();
+
+            }
+
+
+        }
+    }
+    
+}
