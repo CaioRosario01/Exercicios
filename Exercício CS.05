@@ -1,0 +1,161 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+
+        //Criando a Classe aluno
+        class Aluno
+        {
+            public string Nome { get; set; }
+            public string Senha { get; set; }
+            public string Escola { get; set; }
+            public double Nota1 { get; set; }
+            public double Nota2 { get; set; }
+
+            public Aluno(string nome, string senha, string escola)
+            {
+                Nome = nome;
+                Senha = senha;
+                Escola = escola;
+                Nota1 = -1; //Idicador de nota não cadastrada
+                Nota2 = -1; //Indicador de nota não cadastrada
+            }
+
+            public double CalcularMedia()
+            {
+                if (Nota1 >= 0 && Nota2 >= 0)
+                {
+                    return (Nota1 + Nota2) / 2;
+                }
+
+                else
+                {
+                    return -1; //Indicador de média não disponível
+                }
+            }
+        }
+
+        //Dicionário para armazenar os alunos cadastrados
+
+        static Dictionary<string, Aluno> alunos = new Dictionary<string, Aluno>();
+
+
+        static void Main(string[] args)
+        {
+
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("Escolha uma opção:");
+                Console.WriteLine("1- Cadastrar aluno");
+                Console.WriteLine("2- Verificar aluno");
+                Console.WriteLine("3- Verificar Média do aluno");
+                Console.WriteLine("4- Encerrar programa");
+                string opcao = Console.ReadLine();
+
+                switch (opcao)
+                {
+                    case "1":
+                        CadastrarAluno();
+                        break;
+
+                    case "2":
+                        VerificarAluno();
+                        break;
+                    case "3":
+                        VerificarMediaAluno();
+                        break;
+                    case "4":
+                        Console.WriteLine("Encerrando o Programa...");
+                        return;
+                    default:
+                        Console.WriteLine("Opção inválida! Tente novamente.");
+                        break;
+                }
+
+            }
+      
+        }
+
+      
+      static void CadastrarAluno()
+        {
+            Console.Clear();
+            Console.WriteLine("Digite o nome do aluno: ");
+            string nome = Console.ReadLine();
+            Console.Write("Digite a senha do aluno: ");
+            string senha = Console.ReadLine();
+            Console.Write("Digite a escola do aluno: ");
+            string escola = Console.ReadLine();
+
+            Aluno aluno = new Aluno(nome, senha, escola);
+            alunos[nome] = aluno;
+
+            Console.WriteLine("Aluno cadastrado com sucesso!");
+            Console.WriteLine("Pressione Enter para continuar...");
+            Console.ReadLine();
+        }
+
+        static void VerificarAluno()
+        {
+            Console.Clear();
+            Console.Write("Digite o nome do aluno: ");
+            string nome = Console.ReadLine();
+
+            if (alunos.ContainsKey(nome))
+            {
+                Aluno aluno = alunos[nome];
+                Console.WriteLine($"Nome: {aluno.Nome}");
+                Console.WriteLine($"Senha: {aluno.Senha}");
+                Console.WriteLine($"Escola: {aluno.Escola}");
+            }
+            else
+            {
+                Console.WriteLine("Aluno não encontrado!");
+            }
+
+            Console.WriteLine("Pressione Enter para continuar...");
+            Console.ReadLine();      
+        }
+
+        static void VerificarMediaAluno()
+        {
+            Console.Clear();
+            Console.Write("Digite o nome do aluno: ");
+            string nome = Console.ReadLine();
+
+            if (alunos.ContainsKey(nome))
+            {
+                Aluno aluno = alunos[nome];
+                if (aluno.Nota1 == -1 || aluno.Nota2 == -1)
+                {
+                    Console.Write("Digite a primeira nota do aluno:");
+                    aluno.Nota1 = double.Parse(Console.ReadLine());
+                    Console.Write("Digite a segunda nota do aluno: ");
+                    aluno.Nota2 = double.Parse(Console.ReadLine());                                                     
+                }
+
+                double media = aluno.CalcularMedia();
+                Console.WriteLine($"A média do aluno {aluno.Nome} é: {media}");
+
+
+            }
+
+            else
+            {
+                Console.WriteLine("Aluno não encontrado!");
+
+            }
+
+            Console.WriteLine("Pressione Enter para continuar...");
+            Console.ReadLine();                        
+
+        }
+    }
+}
