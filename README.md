@@ -3,7 +3,7 @@
 Bem-vindo(a)! Este repositório contém exercícios de programação que estou resolvendo enquanto aprendo **Python** e **C#** por conta própria.
 
 ## 🧑‍💻 Sobre mim
-Sou um estudante de 16 anos aficionado por tecnologia. Estou aprendendo programação sem nenhum curso formal, explorando conceitos através da prática com exercícios e pequenos projetos.
+Sou um estudante aficionado por tecnologia. Estou aprendendo programação de forma autoditada, explorando conceitos através da prática com exercícios e pequenos projetos.
 
 ## 🚀 Objetivo
 
