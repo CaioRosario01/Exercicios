@@ -1,0 +1,13 @@
+frutas = [] #Criando a lista
+
+while True: #Enquanto verdade
+    fruta = input("Digite o nome de uma fruta (ou 'sair' para parar): ")
+
+    if fruta.strip().lower() == "sair": #Se fruta = sair, "fechar" o loop
+        break
+
+    frutas.append(fruta) #Adiciona uma fruta ao fim da lista
+
+print("\nFrutas adicionadas:")#\n Pula linha para o print basicamente
+for i in frutas: #Loop 
+    print("-", i)
