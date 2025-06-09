@@ -1,0 +1,43 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def enviar_cpf():
+    cpf = entrada_cpf.get()
+
+    #Limpar o CPF 
+    #Tirar espaço no inicio e final
+    cpf = cpf.strip()
+    #Tirar os pontos
+    cpf = cpf.replace(".", "")
+    #Tirar os traços
+    cpf = cpf.replace("-","")
+
+    if cpf.strip() == "":
+
+        messagebox.showwarning("Aviso", "Por favor, insira um CPF.")
+    
+    if not cpf.isdigit() or len(cpf) != 11:
+        messagebox.showwarning("Aviso", "CPF Inválido.")   
+   
+    else:
+        messagebox.showinfo("CPF Recebido", f"O CPF digitado foi: {cpf}")
+
+# Criar janela principal
+janela = tk.Tk()
+janela.title("Validador de CPF")
+janela.geometry("300x150")
+
+# Label
+label = tk.Label(janela, text="Digite o CPF:")
+label.pack(pady=10)
+
+# Campo de entrada
+entrada_cpf = tk.Entry(janela)
+entrada_cpf.pack()
+
+# Botão para enviar
+botao = tk.Button(janela, text="Enviar", command=enviar_cpf)
+botao.pack(pady=10)
+
+# Iniciar a interface
+janela.mainloop()
