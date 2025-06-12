@@ -1,0 +1,44 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def ReceberEmail():
+    email = colocar_email.get()
+
+    #Tirando espaço no começo e no final:
+    email = email.strip()
+
+    #Caso o usuário não insira o email
+    if email.strip() == "":
+        messagebox.showwarning("Aviso! Insira um Email")
+    
+    #Caso não tenha @
+    elif "@" not in email.strip():
+        messagebox.showwarning("Erro", "Insira o email corretamente")
+
+    #Caso não termine com @gmail.com
+    elif not email.endswith("@gmail.com"):
+        messagebox.showwarning("Email Invalido")
+    
+    #Se estiver tudo certo ele vai mostrar o email
+    else:
+        messagebox.showinfo("Email recebido", f"O Email é: {email}")
+
+    # Criar janela principal
+janela = tk.Tk()
+janela.title("Validador de Email")
+janela.geometry("300x150")
+
+# Label
+label = tk.Label(janela, text="Digite o Email:")
+label.pack(pady=20)
+
+# Campo de entrada
+colocar_email = tk.Entry(janela)
+colocar_email.pack()
+
+# Botão para enviar
+botao = tk.Button(janela, text="Enviar", command= ReceberEmail)
+botao.pack(pady=10)
+
+# Iniciar a interface
+janela.mainloop()
