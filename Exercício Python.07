@@ -1,0 +1,28 @@
+#Exercise 1 (Grokking Algorithms)
+#**Suppose you have a sorted list of 128 names, and you’re searching
+#through it using binary search. What’s the maximum number of
+#steps it would take?
+def divindo_2():
+     y = 128
+     contador = 0
+     while y > 1:
+          y = y/2
+          contador += 1
+          print(y)
+          print("Número de divisões:", contador)
+          
+divindo_2()
+     
+#Exercise 2 (Grokking Algorithms)
+# Suppose you double the size of the list. What’s the maximum
+#number of steps now?
+def divisao_2():
+     i = 256
+     contador = 0
+     while i > 1:
+          i = i/2
+          contador += 1
+          print(i)
+          print("O número de divisões foi:", contador)
+          
+divisao_2()
