@@ -1,0 +1,44 @@
+#Exercício 1
+#Criar uma lista chamada cores com as cores: "azul", "vermelho"
+#"verde" e amarelo
+lista_cores = ["azul", "vermelhor", "verde", "amarelo"]
+print(lista_cores[0],"e", lista_cores[3])
+
+
+#Exercício 2
+#Crie uma lista com os números: [10, 20, 30, 40].
+#Troque o número 20 por 25 e imprima a lista atualizada.
+lista_num = [10,20,30,40]
+lista_num[1] = 25
+print(lista_num)
+
+#Exercício 3
+#Crie uma lista chamada frutas com 3 frutas.
+#Depois:
+#Adicione mais uma fruta.
+#Remova a primeira fruta.
+#Imprima a lista final.
+lista_fruta = ["maça", "banana", "laranja"]
+lista_fruta.append("Abacaxi") 
+lista_fruta.remove("maça")
+print(lista_fruta)
+
+#Exercício 4
+#. Contando elementos
+#Crie uma lista com os nomes de 5 alunos.
+#Imprima quantos alunos estão na lista (use len()).
+
+#Exercício 5
+#Usando for com listas
+#Crie uma lista de números de 1 a 5 e use um
+# for para imprimir o dobro de cada número.
+
+#Exercício 6
+#Listas e média
+#Crie uma lista com 4 notas (números float).
+#Depois:Calcule a média das notas.
+#Se a média for maior ou igual a 7, mostre "Aprovado", senão "Reprovado".
+
+#Exercício 7
+#Dada uma lista de números inteiros, remova todos os números pares da lista.
+#Exemplo: de [1, 2, 3, 4, 5, 6] deve virar [1, 3, 5].
