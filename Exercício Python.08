@@ -27,17 +27,34 @@ print(lista_fruta)
 #. Contando elementos
 #Crie uma lista com os nomes de 5 alunos.
 #Imprima quantos alunos estão na lista (use len()).
+lista_alunos = ["Caio", "Lula", "Pedro", "Raiam", "João"]
+print(f"Exisem {len(lista_alunos)} Alunos ")
+
 
 #Exercício 5
 #Usando for com listas
 #Crie uma lista de números de 1 a 5 e use um
 # for para imprimir o dobro de cada número.
 
+lista_numeros = [1,2,3,4,5]
+for numero in lista_numeros:
+    print(numero * 2)
+
 #Exercício 6
 #Listas e média
 #Crie uma lista com 4 notas (números float).
 #Depois:Calcule a média das notas.
 #Se a média for maior ou igual a 7, mostre "Aprovado", senão "Reprovado".
+lista_notas = [7.5, 5.2, 8.3, 9.5, 0.4]
+soma = 0
+
+for notas in lista_notas:
+    soma += notas
+
+media = soma /len(lista_notas)
+print(f"Média: {media:.2f}")
+
+
 
 #Exercício 7
 #Dada uma lista de números inteiros, remova todos os números pares da lista.
