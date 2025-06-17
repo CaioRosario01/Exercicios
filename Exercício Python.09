@@ -1,0 +1,17 @@
+#Criar um programa que permita:
+# Cadastrar, Listar, Atualizar e Deletar usuários 
+# (CRUD = Create, Read, Update, Delete).
+
+
+lista_usuarios = []
+
+def loop():
+    while True:
+        adicionar_usuario = input("Digite um usuário ou sair para parar: ")
+        if adicionar_usuario == "sair".lower():
+            break       
+        lista_usuarios.append(adicionar_usuario)
+        print (lista_usuarios)
+
+loop()
+    
