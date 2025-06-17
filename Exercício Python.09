@@ -2,16 +2,35 @@
 # Cadastrar, Listar, Atualizar e Deletar usuários 
 # (CRUD = Create, Read, Update, Delete).
 
+selecao = input("Olá, escolha uma função: digite 1 para: Gerenciar usuário, 2 para: Gerenciar e calcular notas: ")
 
-lista_usuarios = []
+def __Gerenciar_notas__():
+    print("Olá, você escolheu a função de gerenciar notas, digite as 3 notas do aluno.")
+    nota1 = float(input("Digite a primeira nota: "))
+    nota2 = float(input("Digite a segunda nota: "))
+    nota3 = float(input("Digite a terceira nota: "))
 
-def loop():
+    media = (nota1 + nota2 + nota3) / 3
+    
+    print(f"Essa foi a média do aluno: {media:.1f}")
+
+
+def __Gerenciar_usuarios__():
+    
+    lista_usuarios = []
+    print("Olá, você escolheu a função de gerenciar usuarios.")
+
     while True:
         adicionar_usuario = input("Digite um usuário ou sair para parar: ")
         if adicionar_usuario == "sair".lower():
-            break       
+            print("Encerrando programa")
+            break 
+
         lista_usuarios.append(adicionar_usuario)
         print (lista_usuarios)
 
-loop()
-    
+if selecao == ("1"):
+    __Gerenciar_usuarios__()
+
+elif selecao ==("2"):
+    __Gerenciar_notas__()
