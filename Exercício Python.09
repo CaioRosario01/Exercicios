@@ -19,18 +19,32 @@ def __Gerenciar_usuarios__():
     
     lista_usuarios = []
     print("Olá, você escolheu a função de gerenciar usuarios.")
-
     while True:
-        adicionar_usuario = input("Digite um usuário ou sair para parar: ")
-        if adicionar_usuario == "sair".lower():
-            print("Encerrando programa")
-            break 
+        adicionar_usuario = input("Digite um usuário, sair para parar o programa ou 'Excluir' para excluir algum nome: ")
+        if adicionar_usuario == "excluir":     
+            excluir = input("Digite o nome do usuário que você quer excluir: ")
+            if excluir in lista_usuarios:
+                    lista_usuarios.remove(excluir)
+                    print(f"O usuário apagado foi: {excluir} ")
+            
+            else:
+                print("O usuário não foi encontrado")
 
-        lista_usuarios.append(adicionar_usuario)
-        print (lista_usuarios)
+        elif adicionar_usuario == ("sair").lower():
+            print("Encerrando programa")
+            break
+
+        
+        else:
+            lista_usuarios.append(adicionar_usuario)
+            print(f"Usuário '{adicionar_usuario}' adicionado.")
+
+            
+        print (f"Lista de usuários atual: {lista_usuarios}")  
 
 if selecao == ("1"):
     __Gerenciar_usuarios__()
 
 elif selecao ==("2"):
     __Gerenciar_notas__()
+
