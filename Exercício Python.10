@@ -1,0 +1,75 @@
+#Loops de repetição:
+#For(Percorre uma sequência de dados): 
+#Exemplo1: 
+lista = [1,2,3,4,5]
+for item in lista:
+    print(item)
+else:    
+    print("Itens mostrados com sucesso")
+
+#Também é possível percorrer os dicionários do python 
+notas = {
+    'Potuguês': 7, 
+    'Matemática': 9, 
+    'Lógica': 7, 
+    'Algoritmo': 7
+}
+
+for chave, valor in notas.items():
+    print(f"{chave}: {valor}")
+
+#Percorrendo Strings:
+for letras in "python":
+    print(letras)
+
+
+#Loops utilizando While:
+#**Auxiliadores do While: Break / Continue / Pass
+#Exercício 1: 
+#Mostre os números de 1 até 10 usando while.
+contador = 0
+
+while contador < 10:
+    print(f"O valor do contador é {contador}")
+    contador += 1
+else:
+    print(f'Fim do while e o valor do contador é {contador}')
+
+#Exercício 2:
+#Peça para o usuário digitar algo até ele digitar "sair".
+while True:
+    x = input("Digite algo: ")
+    if x == ("sair").lower():
+        print("Você encerrou o programa...")
+        break
+
+#Exercício 3:
+#Peça números ao usuário até ele digitar 0. Depois mostre a soma total.
+
+soma = 0
+
+while True:
+    tentativas = int(input("Digite um número:"))
+    if tentativas == 0:
+        break
+    
+
+    soma += tentativas
+
+print("Soma total dos números:", soma)
+
+#Exercício 4:
+#Faça um jogo onde o usuário tenta adivinhar um número secreto entre 1 e 10.
+#Enquanto errar, continua tentando.
+
+
+#Exercício 5:
+#Crie um menu simples:
+#[1] Ver mensagem
+#[2] Mostrar lista de nomes
+#[3] Sair
+
+
+#Exercício 6:
+#O usuário tem 3 tentativas para acertar a senha "1234".
+#Se errar 3 vezes, o programa bloqueia o acesso.
