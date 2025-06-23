@@ -52,8 +52,6 @@ while True:
     tentativas = int(input("Digite um número:"))
     if tentativas == 0:
         break
-    
-
     soma += tentativas
 
 print("Soma total dos números:", soma)
@@ -61,7 +59,19 @@ print("Soma total dos números:", soma)
 #Exercício 4:
 #Faça um jogo onde o usuário tenta adivinhar um número secreto entre 1 e 10.
 #Enquanto errar, continua tentando.
+import random
+numero = random.randint(1,500)
 
+while True:
+    
+    adivinha = int(input("Digite o número: "))
+    if adivinha < numero:
+        print("Chute um número maior.")
+    if adivinha > numero:
+        print("Digite um número menor.")    
+    if adivinha == numero:
+        print("Você acertou o número.")  
+        break  
 
 #Exercício 5:
 #Crie um menu simples:
@@ -69,7 +79,32 @@ print("Soma total dos números:", soma)
 #[2] Mostrar lista de nomes
 #[3] Sair
 
+lista = ["Caio", 4, "João", 90, "Salve"] 
+while True:
+    opcoes = input("Digite 1 para ver mensagem, 2 para mostrar lista e 3 para sair: ")
+    if opcoes == ("1"):
+        print("Mensagem: Stay Hard")
+    if opcoes == ("2"):
+        print(lista)
+    if opcoes == ("3"):
+        print("Encerrando...")
+        break
+
 
 #Exercício 6:
 #O usuário tem 3 tentativas para acertar a senha "1234".
 #Se errar 3 vezes, o programa bloqueia o acesso.
+contador = 0
+while contador < 3:
+    contador += 1
+    conta_tentativas = 3 - contador
+    if contador > 3:
+        print("Tentativas encerradas")
+        break
+    
+    senha_tentativa = input("Digite a senha: ")
+    if senha_tentativa == "1234":
+        print("Acertou")
+        break
+    else:
+        print(f"Você tem mais {conta_tentativas} tentativas ")
