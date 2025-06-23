@@ -1,6 +1,6 @@
 #Criar um programa que permita:
 # Cadastrar, Listar, Atualizar e Deletar usuários 
-# (CRUD = Create, Read, Update, Delete).
+# (CRUD = Create, Read, Update, Delete)
 
 selecao = input("Olá, escolha uma função: digite 1 para: Gerenciar usuário, 2 para: Gerenciar e calcular notas: ")
 
