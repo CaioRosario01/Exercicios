@@ -1,0 +1,83 @@
+#Dicionários em Python
+Professor = {
+#    Chave     Valor 
+    "Matéria": "Português",
+    "Função": "Professor",
+    "Nome": "João",
+    "Idade": 30,
+    "Salário": 4.500,
+    
+}
+#Acessando os dados:
+print(Professor["Função"])
+
+#Adicionando ou alterando valores:
+Professor["Idade"] = 33
+Professor["Salário"] = 5.000
+
+#Removendo chave:
+del Professor["Matéria"]
+
+#Percorrendo um dicionário:
+for chaves in Professor:
+    print(f"Essas são as chaves: {chaves}")
+
+
+#Exercício dicionário em python
+Aluno_nota = {}
+
+while True:
+
+    aluno = str(input("Digite o nome do aluno: "))
+    if aluno.lower() == "sair":
+        break
+
+    try:
+        nota = float(input("Digite a nota do usuário: "))
+        Aluno_nota[aluno] = nota
+    except ValueError:
+        print("Digite um número válido.")
+         
+print("\nAlunos e notas:")
+for aluno, nota in Aluno_nota.items():
+    print(f"{aluno} - {nota}")
+
+#Exercício 2
+#Crie um programa que simula um pequeno sistema de controle de estoque de produtos.
+# O programa deve permitir:
+#Cadastrar produtos com nome e quantidade em estoque.
+#Atualizar a quantidade de um produto já existente.
+#Mostrar todos os produtos e suas quantidades.
+#Sair do programa.
+
+lista_estoque = {}
+while True:
+    print("\n[1] Adicionar novo produto")
+    print("[2] Atualizar quantidade")
+    print("[3] Mostrar estoque")
+    print("[4] Sair")
+    escolha = input("Escolha uma opção: ")
+    if escolha == ("1"):
+        print("Você escolheu adicionar novo produto!")
+        nome_produto = input("Nome do produto: ")
+        quantidade_produto = int(input("Digite a quantidade do produto: "))
+
+        lista_estoque[nome_produto] = quantidade_produto
+        print("\nProduto adicionado!\n")
+
+    if escolha == ("2"):
+        print("Você escolheu atualizar a quantidade de um produto!")
+        atualizar_produto = input("Digite o produto: ")
+        atualizar_produto1 = int(input("Digite a nova quantidade do produto: "))
+
+        lista_estoque[atualizar_produto] = atualizar_produto1
+        print("\nProduto atualizado!\n")
+    if escolha == ("3"):
+        print("\nEstoque atual:\n ")  
+        for nome_produto, quantidade_produto in lista_estoque.items():
+            print(f"{nome_produto} - {quantidade_produto}")      
+        
+    
+    if escolha == ("4"):
+        print("\nEncerrando...")
+        break
