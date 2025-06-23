@@ -1,0 +1,43 @@
+#Dicionários em Python
+Professor = {
+#    Chave     Valor 
+    "Matéria": "Português",
+    "Função": "Professor",
+    "Nome": "João",
+    "Idade": 30,
+    "Salário": 4.500,
+    
+}
+#Acessando os dados:
+print(Professor["Função"])
+
+#Adicionando ou alterando valores:
+Professor["Idade"] = 33
+Professor["Salário"] = 5.000
+
+#Removendo chave:
+del Professor["Matéria"]
+
+#Percorrendo um dicionário:
+for chaves in Professor:
+    print(f"Essas são as chaves: {chaves}")
+
+
+#Exercício dicionário em python
+Aluno_nota = {}
+
+while True:
+
+    aluno = str(input("Digite o nome do aluno: "))
+    if aluno.lower() == "sair":
+        break
+
+    try:
+        nota = float(input("Digite a nota do usuário: "))
+        Aluno_nota[aluno] = nota
+    except ValueError:
+        print("Digite um número válido.")
+         
+print("\nAlunos e notas:")
+for aluno, nota in Aluno_nota.items():
+    print(f"{aluno} - {nota}")
