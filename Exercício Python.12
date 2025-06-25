@@ -1,0 +1,119 @@
+#Funções em Python
+
+
+#Exemplo 1:
+#Função "básica"
+def saudacao():
+    print("Olá!")
+
+saudacao()
+
+#Exemplo 2
+#Usando parametros dentro de uma Função:
+def pessoa(nome):
+    print(f"Olá, {nome}")
+
+pessoa("João")
+
+
+#Exemplo 3
+#Função com retorno(Usando return)
+def soma(a, b):
+    return a + b
+
+resultado = soma(3,5)
+print(f"Esse é o resultado: {resultado}")
+
+
+#Exercícios sobre função:
+#Exercício 1:
+#Crie uma função chamada boas_vindas que imprime a mensagem:
+#"Bem-vindo(a) ao mundo da programação!"
+def boas_vindas():
+    print("Bem-vindo(a) ao mundo da programação!")
+
+boas_vindas()
+
+
+#Exercício 2:
+#Crie uma função chamada soma que:
+#recebe dois números como parâmetros e imprime a soma deles.
+def soma():
+    a = int(input("Digite o primeiro número: "))
+    b = int(input("Digite o segundo número: "))
+    x = a+b
+    print(f"A soma dos dois números é: {x}")
+
+soma()
+
+
+#Exercício 3:
+#Crie uma função chamada dobro que recebe um número
+#e retorna o dobro dele.
+def dobro():
+    num = int(input("Digite o número: "))
+    dobro = num * 2
+    print(f"Esse é o dobro do número:{dobro} ")
+
+dobro()
+
+#Exercício 4:
+#Crie uma função chamada par_ou_impar que recebe um número
+# e retorna uma string: Par se for par e ímpar se for ímpar
+def par_ou_impar():
+    numero = float(input("Digite um número: "))
+    
+    if numero % 2 != 0:
+        print("O número é ímpar")
+    else:
+        print("O número é par")
+
+par_ou_impar()
+
+#Exercício 5
+#Crie uma função chamada contar_ate que:
+# recebe um número inteiro e imprime todos os números
+# de 1 até esse número, um por linha.
+
+def contar_ate():
+    num_int = int(input("Digite um número:"))
+    for i in range(num_int):
+        print(i + 1)
+
+contar_ate()
+
+from math import factorial
+
+#Exercício 6
+#Crie uma função chamada fatorial que recebe um número
+# e retorna o fatorial dele.
+from math import factorial
+#Maneira 1 (Usando Return)
+def fatorial1():
+
+    num_fatorial = int(input("Digite o numero para fatorial: "))
+    return factorial(num_fatorial) 
+
+result = fatorial1()
+print(result)
+
+
+#Maneira 2 (Usando apenas input, sem return)
+def fatorial():
+    num_ = int(input("Digite o número: "))
+    num_fatoriado = factorial(num_)
+
+    print(f"Esse é o número fatoriado:{num_fatoriado}")
+
+fatorial()
+
+#Exercício 7
+#Função para verificar se uma palavra é palíndromo
+def palindromo():
+    palin = input("Digite uma palavra: ").lower()
+    if palin[::-1] == palin:
+        print("É um palíndromo!")
+    else:
+        print("Não é um palíndromo!") 
+
+palindromo()
