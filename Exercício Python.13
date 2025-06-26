@@ -1,0 +1,72 @@
+#Exercícios para revisar o que aprendi até agora
+
+
+#Exercício1:
+#Escreva um programa que permita que,
+#um usuário crie uma lista de comprar.
+#Ele deve ser capaz de adicioar, remorer e visualizar a lista
+lista_compras = []
+while True:
+    print("[1] Para Adicionar itens")
+    print("[2] Para remover um item")
+    print("[3] Para visualizar a lista")
+    print("[4] Para encerrar o programa.\n")
+    decisao = input("Digite: ")
+
+    if decisao == "1":
+        print("\nVocê escolheu a opção de adicionar um item!")
+        ad_item = input("Digite o item que você quer adicionar: ")
+        lista_compras.append(ad_item)
+        print(f"\nO item: {ad_item} foi adicionado com sucesso!")
+        print(f"Está é a lista: {lista_compras}\n")
+
+    if decisao == "2":
+        print("\nVocê escolheu a opção de remover um item\n")
+        rem_item = input("Digite um item para remover: ")
+        if rem_item not in lista_compras:
+            print("\nNão foi possível identificar o item.\n")
+
+        else:
+            lista_compras.remove(rem_item)
+            print(f"Item removido com sucesso!")
+            print(f"Esta é a lista: {lista_compras}")
+    
+    if decisao == "3":
+        print("\nVocê escolheu a opção de mostrar a lista!")
+        print(f"Essa é a lista: {lista_compras}\n")
+
+    if decisao == "4":
+        print("Encerrando programa.")
+        break
+    if decisao != "1" or "2" or "3" or "4":
+        print("Digite uma opção válida\n")
+
+
+#Exercício2
+#Escreve um programa que preveja as vendas totais para cada produto
+#em uma empresa. O usuário deve digitar o nome do produto, as vendas
+#do mês atual e a taxa de crescimento, e o programa deve calcular
+#as vendas previstas para o próximo mês.
+
+vendas_previsao = {}
+while True:
+    nom_produto = input("Digite o nome do produto (ou 'sair' para sair): ")
+    
+    if nom_produto.lower() == "sair":
+        break
+
+    vendas_mes = float(input("Digite quanto esse produto vendeu no mês: "))
+    taxa_cres = float(input("Digite a taxa de crescimento do produto: (Ex: 5%): "))
+
+    
+    previsao = vendas_mes* (taxa_cres / 100) + vendas_mes
+
+    vendas_previsao[nom_produto] = {
+        "vendas/mês": vendas_mes,
+        "taxa de crescimento (%)": taxa_cres,
+        "previsão próximo mês": previsao
+     }
+
+    
+    print(vendas_previsao)
+    print(f"Essa é a previsão de vendas para o próximo mês do produto {nom_produto}: {previsao1}")
