@@ -61,7 +61,7 @@ while True:
     
     previsao = vendas_mes* (taxa_cres / 100) + vendas_mes
 
-    vendas_previsao[nom_produto] = {
+    vendas_previsao[nom_produto] = {    
         "vendas/mês": vendas_mes,
         "taxa de crescimento (%)": taxa_cres,
         "previsão próximo mês": previsao
@@ -69,4 +69,74 @@ while True:
 
     
     print(vendas_previsao)
-    print(f"Essa é a previsão de vendas para o próximo mês do produto {nom_produto}: {previsao1}")
+    print(f"Essa é a previsão de vendas para o próximo mês do produto {nom_produto}: {previsao}")
+
+
+#Exercício3
+clientes_segmento = {}
+while True:
+    client_name = input("Digite o nome do cliente(Ou 'sair' para sair): ")
+    if client_name.lower() == ("sair"):
+        break
+    
+    compras_totais = float(input("Digite o total de compras do cliente: "))
+
+    if compras_totais > 0 and compras_totais < 1000:
+        classe_cliente = ("Cliente Bronze")
+    if compras_totais > 1000 and compras_totais < 5000:
+        classe_cliente = ("Cliente Prata")
+    if compras_totais >= 5000:
+        classe_cliente = ("Cliente Ouro")
+
+        clientes_segmento[client_name] = {
+            "Cliente": client_name,
+            "Compras totais": compras_totais,
+            "Classe:": classe_cliente
+        }
+    
+    print(clientes_segmento)
+
+
+#Exercício4
+#Escreva um programa que segmenta clientes com base em suas compras totais.
+#O usuário deve digitar o nome do cliente e suas compras totais, e o programa deve
+#Atribuir cada cliente a um segmento.
+clientes_segmento = {}
+while True:
+    client_name = input("Digite o nome do cliente(Ou 'sair' para sair): ")
+    if client_name.lower() == ("sair"):
+        print(clientes_segmento)
+        break
+
+    compras_totais = float(input("Digite o total de compras do cliente: "))
+    
+    if compras_totais > 0 and compras_totais < 1000:
+        classe_cliente = ("Cliente Bronze")
+    if compras_totais > 1000 and compras_totais < 5000:
+        classe_cliente = ("Cliente Prata")
+    if compras_totais >= 5000:
+        classe_cliente = ("Cliente Ouro")
+
+    clientes_segmento[client_name] = {
+        "Compras totais": compras_totais,
+        "Classe:": classe_cliente
+    
+    }    
+
+
+#Exercício 5
+#Crie um analisador de texto fornecido pelo usuário.
+#O programa deve contar o número de palavras e letras
+texto = input("Digita aí nigga: ")
+palavras = texto.split()
+quantidade_palavras = len(palavras)
+letras = [c for c in texto if c.isalpha()]
+quantidade_letras = len(letras)
+
+
+for i, letra in enumerate(letras, start=1):
+    print(f"{i}: {letra}")
+
+print(f"O texto tem: {quantidade_letras} letras")
+
+print(f"O texto tem: {quantidade_palavras} palavras.")
