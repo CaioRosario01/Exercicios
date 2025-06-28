@@ -1,0 +1,30 @@
+#📌 Conceitos Básicos
+
+#1. Classe
+#A classe vai ser o modelo.
+#Ex:
+class Pessoa:
+    pass
+
+#2. Objeto
+#É uma instância da classe. Usamos a classe
+#Para criar objetos reais;
+Caio = Pessoa()
+
+#3. Atributos
+#São características do objeto.
+class Pessoa:
+    def __init__(self, nome, idade):  # Método especial chamado ao criar o objeto
+        self.nome = nome              # Atributo "nome"
+        self.idade = idade            # Atributo "Idade"
+
+#4. Métodos
+#São ações que o objeto pode executar
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def se_apresentar(self):
+        print(f"Oi, meu nome é {self.nome} e tenho {self.idade} anos.")
+        
