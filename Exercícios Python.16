@@ -1,0 +1,54 @@
+#👨🏽‍💻Exercícios para treinar o básico de POO
+#Criando uma classe Simples
+#Objetivo: Criar uma classe Carro, com os atributos:
+#Marca, modelo e ano. Depois criar um objeto e imprimir os dados.
+class carro:
+    def __init__ (self, marca, modelo, ano):
+        self.marca = marca
+        self.modelo = modelo
+        self.ano = ano
+    
+    def apresentar_carro(self):
+        print(f"A marca do carro é: {self.marca}, o modelo é: {self.modelo} e o ano é: {self.ano} ")
+
+
+carro1 = carro("Ford", "Ka", 2018)
+carro1.apresentar_carro()
+
+
+#Exercício2 / Método com Cálculo
+#Criar uma classe Retangulo que calcula área.
+class Retangulo:
+    def __init__ (self, largura, altura):
+        self.largura = largura
+        self.altura = altura
+
+    def calcular_area(self):
+        valor_calculado = self.largura * self.altura
+        print(f"Essa é a área: {valor_calculado}")
+    
+retangulo_qualquer = Retangulo(4, 5)
+retangulo_qualquer.calcular_area()
+
+
+#💻Exercício3 / Encapsulamento básico
+#✅Criar uma conta bancária com saldo protegido.
+class ContaSimples:
+    def __init__(self,saldo):
+        self.__saldo = saldo
+    
+    def depositar_valor(self, valor):
+        self.__saldo += valor
+
+    def versaldo(self):
+        print(f"💰 Esse é o seu saldo: R${self.__saldo:.2f}")
+
+# Criando a conta com saldo inicial
+conta1 = ContaSimples(100.0)
+
+# Depositando um valor
+valor = float(input("Digite o valor a ser adicionado: "))
+conta1.depositar_valor(valor)
+
+#Vendo o saldo
+conta1.versaldo()
