@@ -1,0 +1,51 @@
+#💻Princípios da POO (Os 4 Pilares)
+#1. Encapsulamento
+#   -Esconde os Detalhes internos
+#   -Protege os dados com métodos de acesso
+class Conta:
+    def __init__(self, saldo):
+        self.__saldo = saldo #Atributo "privado" com dois underlines
+
+    def depositar(self, valor):
+        if valor > 0:
+            self.__valor += valor
+    def ver_saldo(self):
+
+        return self.__saldo
+
+#👨🏽‍💻Herança
+#Uma classe herda os comportamentos de outra
+class Pessoa:
+    def __init__(self, nome):
+        self.nome = nome
+
+class Aluno(Pessoa): # Aluno herda comportamentos de Pessoa
+    def estudar(self):
+        print(f"{self.nome} está estudando.")
+
+
+#Polimorfismo
+#Objetos diferentes podem ter o mesmo método
+#Porém com comportamentos diferentes.
+class Animal:
+    def falar(self):
+        print("O animal faz um som.")
+
+class Cachorro(Animal):
+    def falar(self):
+        print("Au au!")
+
+class gato(Animal):
+    def falar(self):
+        print("Miau miau")
+
+#Usando o Polimorfismo
+def fazer_o_animal_falar(animal):
+    animal.falar()
+
+fazer_o_animal_falar(Cachorro())
+fazer_o_animal_falar(gato())
+
+
+#💻🖥4. Abstração 
+#Esconde a complexidade e mostra apenas o necessário
