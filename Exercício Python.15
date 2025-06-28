@@ -1,0 +1,15 @@
+#Exemplo Completo (POO)
+
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def apresentacao(self):
+        print(f"Olá meu nome é {self.nome} e tenho {self.idade} anos")
+
+p1 = Pessoa("Caio", 16)
+p2 = Pessoa ("Pedro", 18)
+
+p1.apresentacao()
+p2.apresentacao()
