@@ -52,3 +52,45 @@ conta1.depositar_valor(valor)
 
 #Vendo o saldo
 conta1.versaldo()
+
+
+#👨🏽‍💻Exercício 4
+
+#Criar um sistema básico de contas bancárias usando,
+#Classes, atributos e meétodos.
+
+class conta_bancaria():
+    def __init__(self, titular, saldo):
+        self.titular = titular
+        self.saldo = saldo
+
+    def depositar(self, valor):
+        self.saldo += valor
+
+    def sacar(self, sacar):
+        self.saldo -= sacar
+
+    def exibir_saldo(self):
+        print(f"Esse é o seu saldo: {self.saldo}")
+    
+#Criando a conta bancária
+conta1 = conta_bancaria("Caio", 0)
+
+#Depositando um valor
+valor = float(input("Digite o valor à ser adicionado: "))
+print(f"Esse foi o valor adicionado: {valor}")
+conta1.depositar(valor)
+
+#Sacando um valor
+try:
+    valor_sacar = float(input("Digite o valor para sacar: "))
+    if valor_sacar > conta1.saldo:
+        print(f"Saldo insuficiente, você tem: {conta1.saldo} e quer sacar: {valor_sacar}")
+    else:
+        conta1.sacar(valor_sacar)
+except:
+    print("Ocorreu um erro. Digite um valor válido para o saque.")
+
+#Vendo o saldo
+conta1.exibir_saldo()
+    
