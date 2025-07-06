@@ -1,0 +1,23 @@
+#Exercícios em Python para treinar/recapitular o capítulo 1 de Grokking Algorithms
+
+
+#1. Buscando um nome / Busca Linear
+def listanomes():
+    lista_nomes = ["João","Pedro","Lucas", "Caio", "otavio"]
+    nome_buscado = "Caio"
+    for i, nome in enumerate(lista_nomes):
+        if nome == nome_buscado:
+            print(i)
+listanomes()
+
+#2. Buscar um número em uma lista ordenada / Busca Linear
+def numeros(lista_numeros, numero_buscado):
+    for i, numero in enumerate(lista_numeros):
+        if numero == numero_buscado:
+            print(f"Esse é o número procurado: {numero_buscado} e esse é o índice onde ele está:{i}")
+    return("Não achamos...")
+
+lista_numeros = [0,1,2,3,4,5]
+numeros(lista_numeros,3)
+
+#3- Buscar um número / Busca Binária
