@@ -1,4 +1,4 @@
-#Exercícios em Python para treinar/recapitular o capítulo 1 de Grokking Algorithms
+#👨🏽‍💻Exercícios em Python para treinar/recapitular o capítulo 1 de Grokking Algorithms
 
 
 #1. Buscando um nome / Busca Linear
@@ -21,3 +21,44 @@ lista_numeros = [0,1,2,3,4,5]
 numeros(lista_numeros,3)
 
 #3- Buscar um número / Busca Binária
+def buscar_numero(lista_numeros, numero_buscado):
+    #Define o início e o fim da busca
+    inicio = 0
+    fim = len(lista_numeros) - 1
+    while inicio <= fim:
+        meio = (inicio + fim) // 2
+        chute = lista_numeros[meio]
+
+        if chute == numero_buscado:
+            return meio #Número encontrado
+        
+        elif chute < numero_buscado:
+            inicio = meio+1
+
+        else:
+            fim = meio -1
+    return ("Número não encontrado")
+
+
+resultado = buscar_numero(lista_numeros=[0,1,2,3,4,5], numero_buscado=4)
+print(f"Resultado: {resultado}")
+
+
+#4- Procurando um nome utilizando busca binária
+def procurando_nome(lista_nome, nome_Procurando):
+    inicio_da_procura = 0
+    fim_da_procura = len(lista_nome) - 1
+    while inicio_da_procura <= fim_da_procura:
+        #Definindo o meio:
+        meio = (inicio_da_procura + fim_da_procura) // 2
+        chute = lista_nome[meio]
+        if chute == nome_Procurando:
+            return meio
+        elif chute < nome_Procurando:
+            inicio_da_procura=  meio + 1
+        else:
+            fim_da_procura = meio - 1
+    return("Não encontramos o nome")
+
+resultado_final = procurando_nome(lista_nome=["Caio", "Pedro", "João", "Marcos", "Lucas"])
+print(f"Resultado final: {resultado_final}")
