@@ -108,3 +108,30 @@ while contador < 3:
         break
     else:
         print(f"Você tem mais {conta_tentativas} tentativas ")
+
+
+#Exercício 7:
+#Jogo da Adivinhação
+#1- 
+print('******************************')
+print("      JOGO DA ADIVINHAÇÃO     ")
+print('******************************')
+
+numero = 5
+total_tentativas = 4
+while total_tentativas > 0:
+    total_tentativas -=1
+    chute = int(input(f"Digite um número('0' para sair).Vidas: {total_tentativas}: "))
+    if chute == ("0"):
+        break
+    if chute == numero:
+        print("Você acertou")
+        break
+    if chute > numero:
+        print("Tente um número menor")
+    if chute < numero:
+        print("Tente um número maior")
+    else:
+        ("Digite um número válido!")
+    
+    
