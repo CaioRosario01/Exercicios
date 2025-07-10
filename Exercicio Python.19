@@ -1,0 +1,15 @@
+palavra = ("programacao")
+letras_acertadas = ["_","_","_","_","_","_","_","_","_","_","_"]
+while True:
+    chute = input("Digite uma letra('Sair' para sair): ").lower()
+    if chute.lower() == ("Sair"):
+        break
+    if chute != palavra:
+        print("Tente outra letra")
+    posicao = 0
+    for index, letras in enumerate(palavra):
+        if chute == letras:
+            print("Acertou a letra: {} no índice {}".format(letras, index))
+            letras_acertadas[posicao] = letras
+            print(letras_acertadas)
+            posicao = posicao +1
