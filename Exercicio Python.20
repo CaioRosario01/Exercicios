@@ -1,0 +1,42 @@
+#Exercício - Estrutura de dados:
+#1- Dada a lista = [12, -2, 4, 8, 29, 45, 78, 36, -17, 2, 12, 8, 3, 3, -52] 
+# Faça um programa que:
+
+#a) imprima o maior elemento
+lista = [12, -2, 4, 8, 29, 45, 78, 36, -17, 2, 12, 8, 3, 3, -52]
+maior_elemento = max(lista)
+print(f"Esse é o maior elemento: {maior_elemento}")
+
+#b) imprima o menor elemento
+menor_elemento = min(lista)
+print(f"Esse é o menor elemento: {menor_elemento}")
+
+#c) imprima os números negativos
+for numeros in lista:
+    if numeros < 0:
+        print(numeros)
+
+#d) imprima os números pares
+for numeros in lista:
+    if numeros % 2 == 0:
+        print(f"Esse número é par: {numeros}")
+#e) imprima o número de ocorrências do primeiro elemento da lista
+contagem = 0
+
+for numeros in lista:
+    if numeros == 12:
+        contagem += 1
+        print(f"O número: {numeros} aparece {contagem} vezes")
+#f) imprima a média dos elementos
+soma = sum(lista)
+média = soma / 15
+print(f"Essa é a média: {média}")
+
+
+#g) imprima a soma dos elementos de valor negativo
+lista_2 = []
+for numeros in lista:
+    if numeros < 0:
+        lista_2.append(numeros)
+soma_negativo = sum(lista_2)
+print(f"Essa é a soma dos números negativos: {soma_negativo}")
