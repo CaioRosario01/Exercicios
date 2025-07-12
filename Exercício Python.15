@@ -1,4 +1,4 @@
-#Exemplo Completo (POO)
+#Exemplo1 Completo (POO)
 
 class Pessoa:
     def __init__(self, nome, idade):
@@ -13,3 +13,34 @@ p2 = Pessoa ("Pedro", 18)
 
 p1.apresentacao()
 p2.apresentacao()
+
+#Exemplo2 (POO)
+class ContaCorrente():
+
+    def __init__ (self, nome, cpf):
+        self.nome = nome
+        self.cpf = cpf
+        self.saldo = 0
+
+    def consultar_saldo(self):
+        print(f"Seu saldo atual é: {self.saldo:,.2f}")
+
+
+    def deposito(self, valor):
+        self.saldo += valor
+  
+
+    def sacar(self, valor):
+        if self.saldo >= valor < 0:
+            self.saldo -= valor
+        else:
+            print("Você não saldo suficiente!")
+            self.consultar_saldo()
+
+
+conta_Caio = ContaCorrente("Caio", "299.990.308-40")
+
+conta_Caio.consultar_saldo()
+conta_Caio.deposito(900)
+conta_Caio.consultar_saldo()
+conta_Caio.sacar(8000)
