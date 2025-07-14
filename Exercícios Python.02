@@ -1,4 +1,4 @@
-#Faça um programa que receba dados da altura...
+#Faça um programa que receba dados da altura.
 #de uma pessoa e calcule seu peso ideal, usando a seguinte formula: P = 72,7h - 58(Para homem) e..
 #P = 62,1h - 44,7 para mulher 
 print("Primeiro Exercício: ")
